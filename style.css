@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    to right top,
+    #00ffe9,
+    #40ddaa,
+    #58ba6f,
+    #63973b,
+    #667406
+  );
+}
+
+.carousel {
+  width: 20%;
+  margin: 10px auto;
+}
+.slider {
+  border: 2px solid #ccc;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+}
+
+.profile-container {
+  max-width: 450px;
+  flex-basis: 100%;
+  padding: 30px;
+  margin: 30px;
+  color: white;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.8px);
+  -webkit-backdrop-filter: blur(3.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.profile-container > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-name {
+  display: flex;
+  /* align-items: baseline; */
+  justify-content: center;
+  color: rgb(34, 34, 34);
+}
+.user-name {
+  font-size: 1rem;
+}
+.add-user {
+  text-align: center;
+  margin: 10px;
+}
+.edit-user-form {
+  display: none;
+}
