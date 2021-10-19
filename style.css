@@ -6,14 +6,6 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(
-    to right top,
-    #00ffe9,
-    #40ddaa,
-    #58ba6f,
-    #63973b,
-    #667406
-  );
 }
 
 .carousel {
@@ -36,27 +28,31 @@ body {
   margin: 30px;
   color: white;
   text-align: center;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.16);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.8px);
-  -webkit-backdrop-filter: blur(3.8px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+
 }
 .profile-container > img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  margin: 10px;
 }
 .user-name {
   display: flex;
+  /* font-size:2rem; */
   /* align-items: baseline; */
   justify-content: center;
   color: rgb(34, 34, 34);
+  margin: 10px;
 }
 .user-name {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .add-user {
   text-align: center;
@@ -65,3 +61,7 @@ body {
 .edit-user-form {
   display: none;
 }
+.edit-user-form > .input{
+  margin: 5px;
+}
+
