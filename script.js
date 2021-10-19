@@ -1,8 +1,20 @@
 document.body.innerHTML = `
 <div class="add-user">
-<input class="add-user-name" type="text" placeholder="Enter the name">
-<input class="add-user-image" type="url" placeholder="Paste the url">
-<button onclick="adduser()">Add</button></div>
+<div class="ui left icon input ">
+  <input class="add-user-name" type="text" placeholder="Enter the name">
+  <i class="user icon"></i>
+</div>
+
+<div class="ui left icon input ">
+  <input class="add-user-image" type="url" placeholder="Paste the url">
+  <i class="paste icon"></i>
+</div>
+
+
+
+<button onclick="adduser()" class="ui blue button"><i class="plus icon"></i>ADD</button>
+
+
 <section class="userlist"></section>`;
 
 async function getallusers() {
@@ -23,14 +35,24 @@ async function getallusers() {
       </div>
 
       <div class="edit-delete-user">
-        <button onclick="toggleuser(${data.id})">EDIT</button>
-        <button onclick="deleteuser(${data.id})">DELETE</button>
-      </div>
+      <button class="ui secondary button" onclick="toggleuser(${data.id})">Edit</button>
+      <button class="ui grey button" onclick="deleteuser(${data.id})">Delete </button>
+       
 
         <div class="edit-user-form edit-${data.id}">
-          <input value="${data.name}" class="edit-${data.id}-user-name" type="text" placeholder="Enter the name">
-          <input value="${data.avatar}" class="edit-${data.id}-user-image" type="url" placeholder="Paste the url">
-          <button onclick="saveuser(${data.id})">SAVE</button>
+
+        <div class="ui left icon input ">
+        <input value="${data.name}" class="edit-${data.id}-user-name" type="text" placeholder="Enter the name">
+        <i class="user icon"></i>
+        </div>
+
+        <div class="ui left icon input ">
+        <input value="${data.avatar}" class="edit-${data.id}-user-image" type="url" placeholder="Paste the url">
+        <i class="paste icon"></i>
+        </div>
+
+          
+          <button class="ui green button" onclick="saveuser(${data.id})">Save</button>
         </div>
      
 
@@ -74,20 +96,18 @@ async function adduser() {
   getallusers();
 
   // make the input empty once user is added
-
 }
 
 function toggleuser(userId) {
   console.log("editing");
   const editUserForm = document.querySelector(`.edit-${userId}`);
-  console.log(editUserForm.style.display)
-  editUserForm.style.display= editUserForm.style.display === "block" ? "none" : "block";
-
+  console.log(editUserForm.style.display);
+  editUserForm.style.display =
+    editUserForm.style.display === "block" ? "none" : "block";
 }
 
-
-async function saveuser(userId){
-  console.log("edited", userId)
+async function saveuser(userId) {
+  console.log("edited", userId);
   var name = document.querySelector(`.edit-${userId}-user-name`).value;
   var avatar = document.querySelector(`.edit-${userId}-user-image`).value;
   console.log(avatar, name);
@@ -98,7 +118,7 @@ async function saveuser(userId){
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name:name, avatar:avatar }),
+      body: JSON.stringify({ name, avatar }),
     }
   );
 
